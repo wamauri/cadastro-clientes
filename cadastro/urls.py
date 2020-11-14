@@ -7,5 +7,5 @@ from .views import CampoCreate
 urlpatterns = [
     path('', index),
     # path('cadastro/', cadastro),
-    path('cadastro/', CampoCreate.as_view(), name='cadastro')
+    path('cadastro/', CampoCreate.as_view(), name='cadastro'),
 ]

@@ -9,10 +9,6 @@ def index(request):
     return render(request, 'index.html')
 
 
-# def cadastro(request):
-#     return render(request, 'cadastro.html')
-
-
 class CampoCreate(CreateView):
     model = DadosClientes
     fields = [
@@ -21,10 +17,11 @@ class CampoCreate(CreateView):
         'telefone',
         'data_nascimento',
         'cep',
-        'estado',
-        'endereco',
+        'logradouro',
         'numero',
         'bairro',
+        'cidade',
+        'estado',
         'ponto_referencia',
     ]
     template_name = 'cadastro.html'

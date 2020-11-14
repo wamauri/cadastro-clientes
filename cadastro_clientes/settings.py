@@ -119,3 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Configurações do caminho dos arquivos estáticos
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    'cadastro/templates/static'
+]
