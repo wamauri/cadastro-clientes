@@ -20,5 +20,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('cadastro.urls')),
+    path('', include('cadastro.urls'), name='cadastro'),
 ]
