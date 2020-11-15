@@ -1,12 +1,16 @@
-from .views import CampoCreate, UpdateClienteView, DeleteClienteView
-from .views import IndexView, CadastroApi, CreateClienteView
-from django.urls import path
+from .views import UpdateClienteView, DeleteClienteView
+from .views import IndexView, CreateClienteView
+from cadastro.api import viewsets as cadastroviewset
+from django.urls import path, include
+from rest_framework import routers
 
+
+route = routers.DefaultRouter()
+route.register(r'cadastroapi', cadastroviewset.CadastroViewSet, basename='Cadastro')
 
 urlpatterns = [
-    path('', IndexView.as_view(), name='index'),
-    path('cadastro/', CampoCreate.as_view(), name='cadastro'),
-    path('cadastroapi/', CadastroApi.as_view(), name='cadastroapi'),
+    path('', include(route.urls), name='cadastroapi'),
+    path('index', IndexView.as_view(), name='index'),
 
     path('adicionar/', CreateClienteView.as_view(), name='adicionar_cliente'),
     path('<int:pk>/alterar/', UpdateClienteView.as_view(), name='atualizar_cliente'),
