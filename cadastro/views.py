@@ -1,12 +1,62 @@
-from django.shortcuts import render
-
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, ListView
 from cadastro.models import DadosClientes
-from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 
 
-def index(request):
-    return render(request, 'index.html')
+class IndexView(ListView):
+    models = DadosClientes
+    template_name = 'index.html'
+    queryset = DadosClientes.objects.all()
+    context_object_name = 'clientes'
+
+
+class CreateClienteView(CreateView):
+    model = DadosClientes
+    template_name = 'cliente_form.html'
+    fields = [
+        'nome',
+        'email',
+        'telefone',
+        'data_nascimento',
+        'cep',
+        'logradouro',
+        'numero',
+        'bairro',
+        'cidade',
+        'estado',
+        'ponto_referencia',
+    ]
+    success_url = reverse_lazy('index')
+
+
+class UpdateClienteView(UpdateView):
+    model = DadosClientes
+    template_name = 'cliente_form.html'
+    fields = [
+        'nome',
+        'email',
+        'telefone',
+        'data_nascimento',
+        'cep',
+        'logradouro',
+        'numero',
+        'bairro',
+        'cidade',
+        'estado',
+        'ponto_referencia',
+    ]
+    success_url = reverse_lazy('index')
+
+
+class DeleteClienteView(DeleteView):
+    model = DadosClientes
+    template_name = 'clientes_del.html'
+    success_url = reverse_lazy('index')
+
+
+class CadastroApi(TemplateView):
+    template_name = 'cadastroapi.html'
 
 
 class CampoCreate(CreateView):

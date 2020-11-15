@@ -11,7 +11,7 @@ class DadosClientes(models.Model):
     cep = models.CharField('CEP', max_length=8)
     cidade = models.CharField('Cidade', max_length=150)
     estado = models.CharField('UF', max_length=2)
-    logradouro = models.CharField('Logradouro(rua)', max_length=100, blank=True)
+    logradouro = models.CharField('Logradouro (rua)', max_length=100, blank=True)
     numero = models.CharField('Número', max_length=6)
     bairro = models.CharField('Bairro', max_length=100, blank=True)
     ponto_referencia = models.CharField('Ponto de Referência', max_length=150)

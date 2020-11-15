@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import DadosClientes
 
 
+# @admin.register(DadosClientes)
 class ClientesAdmin(admin.ModelAdmin):
     list_display = (
         'nome',

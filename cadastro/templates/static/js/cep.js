@@ -14,6 +14,7 @@ $(document).ready(function () {
                 $('#id_bairro').val(data.bairro)
                 $('#id_cidade').val(data.localidade)
                 $('#id_estado').val(data.uf)
+                
             },
             error: function (erro) {
                 console.log(erro);
