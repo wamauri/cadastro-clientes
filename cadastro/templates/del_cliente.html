@@ -5,8 +5,8 @@
         {% csrf_token %}
         <p>Você tem certeza que deseja deletar o(a) cliente '{{ object }}'?</p>
         {% buttons %}
-            <button type="submit" class="btn btn-danger">Confirmar</button>
-            <a class="btn btn-warning" href="{% url 'index' %}">Cancelar</a>
+            <button type="submit" class="btn btn-outline-danger">Confirmar</button>
+            <a class="btn btn-outline-dark" href="{% url 'index' %}">Cancelar</a>
         {% endbuttons %}
     </form>
 {% endblock %}

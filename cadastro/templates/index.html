@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-{% load humanize %}
 {% block content %}
-    <div class="table-responsive-sm">
+    <div class="table-responsive-xl">
         <h1>Clientes &#x1F467</h1>
         <table class="table">
             <thead>
@@ -19,8 +18,8 @@
                 <th scope="col">Ponto de Referência</th>
             </thead>
             <body>
-                <div>
-                    <a class="btn btn-warning" href="{% url 'adicionar_cliente' %}">Adicionar</a>
+                <div class="btn">
+                    <a class="btn btn-outline-primary" href="{% url 'adicionar_cliente' %}">Adicionar</a>
                 </div>
                 {% for cliente in clientes %}
                     <tr>
@@ -37,8 +36,8 @@
                         <th>{{ cliente.estado }}</th>
                         <th>{{ cliente.ponto_referencia }}</th>
                         <th>
-                            <a class="btn btn-warning" href="{% url 'atualizar_cliente' cliente.pk %}">Editar</a>
-                            <a class="btn btn-danger" href="{% url 'deletar_cliente' cliente.pk %}">Deletar</a>
+                            <a class="btn btn-outline-info" href="{% url 'atualizar_cliente' cliente.pk %}">Editar</a>
+                            <a class="btn btn-outline-danger" href="{% url 'deletar_cliente' cliente.pk %}">Deletar</a>
                         </th>                        
                     </tr>
                 {% endfor %}
