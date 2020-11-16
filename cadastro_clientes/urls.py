@@ -13,18 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from cadastro.api import viewsets as cadastroviewset
-from django.urls import path, include
-from rest_framework import routers
 from django.contrib import admin
 
+from cadastro.api import viewsets as cadastroviewset
+from rest_framework import routers
 
+from django.urls import path, include
+
+
+# Rotas API
 route = routers.DefaultRouter()
 route.register(r'api', cadastroviewset.CadastroViewSet, basename='api')
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('painel/', admin.site.urls),
     path('api', include(route.urls)),
     path('', include('cadastro.urls')),
 

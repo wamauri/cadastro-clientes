@@ -11,21 +11,25 @@
       <title>Maria Bonita &#x1F467</title>
    </head>
    <body>
+      <!-- Barra de navegação -->
       <div class="container-sm">
-         <nav class="navbar navbar-expend-lg navbar-dark bg-primary">
+         <nav class="navbar navbar-expend-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="{% url 'index' %}">&#x1F381 Loja Maria Bonita</a>
+            <!-- Botão que redireciona para a API -->
             <div>
                <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                     <a class="btn btn-outline-light apibutton" href="{% url 'api' %}">API</a>
+                     <a class="btn btn-light api-button" href="{% url 'api' %}" target="_blank">API</a>
                   </li>
                </ul>
             </div>
          </nav>
+         <!-- Conteúdo da página -->
          <div class="table-responsive-sm">
             {% block content %}{% endblock %}
          </div>
       </div>
+      <!-- Carregamento de arquivos estáticos -->
       <script src="{% static 'js/cep.js' %}"></script>
    </body>
 </html>

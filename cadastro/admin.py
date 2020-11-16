@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import DadosClientes
 
 
-# @admin.register(DadosClientes)
+# Listagem dentro do painel admin
 class ClientesAdmin(admin.ModelAdmin):
     list_display = (
         'nome',

@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% block content %}
-    <h1 class="text-del-cliente">&#x274C Deletar Cliente</h1>
-    <div class="form">
-        <hr>
-        <form method='POST'>
-            {% csrf_token %}
-            <p class="del-aviso">Você tem certeza que deseja deletar o(a) cliente '{{ object }}'?</p>
-            {% buttons %}
-            <div>
-                <button type="submit" class="btn btn-outline-danger confirm-button">Confirmar</button>
-                <a class="btn btn-outline-dark cancel-button-1" href="{% url 'index' %}">Cancelar</a>
-            </div>
-            {% endbuttons %}
-        </form>
-    </div>
+<h1 class="text-del-cliente">&#x274C Deletar Cliente</h1>
+<div class="form">
+   <hr>
+   <form method='POST'>
+      <!-- Pergunta de o usuário quer mesmo apagar o cliente -->
+      {% csrf_token %}
+      <p class="del-aviso">Você tem certeza que deseja deletar o(a) cliente '{{ object }}'?</p>
+      {% buttons %}
+      <!-- Botões da página de deletar cliente -->
+      <div>
+         <button type="submit" class="btn btn-outline-danger confirm-button">Confirmar</button>
+         <a class="btn btn-outline-dark cancel-button-1" href="{% url 'index' %}">Cancelar</a>
+      </div>
+      {% endbuttons %}
+   </form>
+</div>
 {% endblock %}

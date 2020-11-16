@@ -1,3 +1,4 @@
+// Auto completar pelo CEP
 $(document).ready(function () {
     $('#id_cep').focusout(function () {
 
@@ -14,7 +15,6 @@ $(document).ready(function () {
                 $('#id_bairro').val(data.bairro)
                 $('#id_cidade').val(data.localidade)
                 $('#id_estado').val(data.uf)
-                
             },
             error: function (erro) {
                 console.log(erro);
@@ -22,3 +22,9 @@ $(document).ready(function () {
         });
     });
 });
+
+// Remove o placeholder de cada campo.
+// O placeholder foi introduzido pelo form Django
+for (var i = 0; i < 11; i++) {
+    document.getElementsByClassName('form-control')[i].placeholder='';
+}

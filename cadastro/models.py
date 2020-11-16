@@ -1,7 +1,7 @@
 from django.db import models
 
 
-# Create your models here.
+# Modelo de dados
 class DadosClientes(models.Model):
     nome = models.CharField('Nome Completo', max_length=150, blank=True)
     telefone = models.CharField('Telefone', max_length=14, blank=True)
@@ -16,6 +16,6 @@ class DadosClientes(models.Model):
     bairro = models.CharField('Bairro', max_length=100, blank=True)
     ponto_referencia = models.CharField('Ponto de Referência', max_length=150)
 
-    # Retorna o nome do cliente no painel admin
+    # Retorna o nomes na listagem de clientes no painel admin
     def __str__(self):
         return self.nome
