@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% block content %}
-    <h1>Cliente</h1>
+    <h1 class="text-add-cliente">Cliente &#x2705</h1>
     <form method="POST">
         <div class="form-group">
         {% csrf_token %}
         {% bootstrap_form form %}
             {% buttons %}
-                <button type="submit" class="btn btn-outline-primary">Salvar</button>
-                    <a class="btn btn-outline-dark" href="{% url 'index' %}">Cancelar</a>
+                <button type="submit" class="btn btn-outline-primary save-button">Salvar</button>
+                <a class="btn btn-outline-dark cancel-button-2" href="{% url 'index' %}">Cancelar</a>
             {% endbuttons %}
         </div>
     </form>

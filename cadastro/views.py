@@ -1,5 +1,7 @@
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import TemplateView, ListView
+from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic import ListView, DeleteView
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from cadastro.models import DadosClientes
 from django.urls import reverse_lazy
 
@@ -9,6 +11,12 @@ class IndexView(ListView):
     template_name = 'index.html'
     queryset = DadosClientes.objects.all()
     context_object_name = 'clientes'
+
+
+class ApiView(APIView):
+    def get(self, request):
+        dados = DadosClientes.objects.all()
+        return Response({"api": dados})
 
 
 class CreateClienteView(CreateView):
@@ -54,25 +62,3 @@ class DeleteClienteView(DeleteView):
     template_name = 'del_cliente.html'
     success_url = reverse_lazy('index')
 
-
-# class CadastroApi(TemplateView):
-#     template_name = 'cadastroapi.html'
-
-
-# class CampoCreate(CreateView):
-#     model = DadosClientes
-#     fields = [
-#         'nome',
-#         'email',
-#         'telefone',
-#         'data_nascimento',
-#         'cep',
-#         'logradouro',
-#         'numero',
-#         'bairro',
-#         'cidade',
-#         'estado',
-#         'ponto_referencia',
-#     ]
-#     template_name = 'cadastro.html'
-#     success_url = reverse_lazy('cadastro')

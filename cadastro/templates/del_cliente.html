@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% block content %}
-    <form method='POST'>
-        {% csrf_token %}
-        <p>Você tem certeza que deseja deletar o(a) cliente '{{ object }}'?</p>
-        {% buttons %}
-            <button type="submit" class="btn btn-outline-danger">Confirmar</button>
-            <a class="btn btn-outline-dark" href="{% url 'index' %}">Cancelar</a>
-        {% endbuttons %}
-    </form>
+    <h1 class="text-del-cliente">&#x274C Deletar Cliente</h1>
+    <div class="form">
+        <hr>
+        <form method='POST'>
+            {% csrf_token %}
+            <p class="del-aviso">Você tem certeza que deseja deletar o(a) cliente '{{ object }}'?</p>
+            {% buttons %}
+            <div>
+                <button type="submit" class="btn btn-outline-danger confirm-button">Confirmar</button>
+                <a class="btn btn-outline-dark cancel-button-1" href="{% url 'index' %}">Cancelar</a>
+            </div>
+            {% endbuttons %}
+        </form>
+    </div>
 {% endblock %}
