@@ -78,9 +78,9 @@ Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 ---
 ⌨️ com ❤️ por [Amauri Jesus](https://github.com/wamauri) 😊
 
-[index]: screenshots/screenshot_4.png
-[add_cliente]: screenshots/screenshot_1.png
-[edit_cliente]: screenshots/screenshot_5.png
-[delete_cliente]: screenshots/screenshot_6.png
-[api_index]: screenshots/screenshot_2.png
-[api_list]: screenshots/screenshot_3.png
+[index]: cadastro/screenshots/screenshot_4.png
+[add_cliente]: cadastro/screenshots/screenshot_1.png
+[edit_cliente]: cadastro/screenshots/screenshot_5.png
+[delete_cliente]: cadastro/screenshots/screenshot_6.png
+[api_index]: cadastro/screenshots/screenshot_2.png
+[api_list]: cadastro/screenshots/screenshot_3.png
